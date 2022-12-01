@@ -1,8 +1,5 @@
 #include "Engine.h"
 
-
-
-
 	bool Engine::init()
 	{
 		bool success = true;

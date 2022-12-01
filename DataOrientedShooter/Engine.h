@@ -6,8 +6,6 @@
 
 class Engine
 {
-	const int SCREEN_WIDTH = 1152;
-	const int SCREEN_HEIGHT = 648;
 
 	bool quit = false;
 
@@ -30,6 +28,9 @@ public:
 	void update();
 
 	void render();
+
+	static const int SCREEN_WIDTH = 1152;
+	static const int SCREEN_HEIGHT = 648;
 
 	SDL_Window* window = NULL;
 	SDL_Surface* screenSurface = NULL;
