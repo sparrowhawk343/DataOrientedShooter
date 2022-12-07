@@ -1,15 +1,15 @@
+#pragma once
 #include <SDL.h>
 #include <stdio.h>
 #include <iostream>
 #include <SDL_image.h>
 
+	
 
 class Engine
 {
 
 	bool quit = false;
-
-	SDL_Renderer* renderer = NULL;
 
 	SDL_Texture* backgroundTexture = NULL;
 
@@ -32,6 +32,7 @@ public:
 	static const int SCREEN_WIDTH = 1152;
 	static const int SCREEN_HEIGHT = 648;
 
+	SDL_Renderer* renderer = NULL;
 	SDL_Window* window = NULL;
 	SDL_Surface* screenSurface = NULL;
 	SDL_Surface* displaySurface = NULL;

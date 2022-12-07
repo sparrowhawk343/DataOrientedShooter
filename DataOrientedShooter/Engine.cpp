@@ -141,6 +141,8 @@
 	{
 		SDL_Event e;
 		quit = false;
+
+
 		while (!quit)
 		{
 			while (SDL_PollEvent(&e))

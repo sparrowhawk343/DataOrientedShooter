@@ -1,24 +1,27 @@
 #include "Player.h"
-#include "Engine.h"
 
-void Player::move(SDL_Rect& collider)
+
+void Player::move(AABB& collider)
 {
-	//xPosition += xVelocity;
-	//collider.x = xPosition;
+	xPosition += xVelocity;
+	collider.xPosition = xPosition;
 
-	//if ((xPosition < 0) || 
-	//	(xPosition + playerRect.w > Engine::SCREEN_WIDTH) || 
-	//	checkCollision(playerCollider, collider) )
-	//{
-	//	xPosition -= xVelocity;
-	//	playerCollider.x = xPosition;
-	//}
+	if ((xPosition < 0) || 
+		(xPosition + playerRect.w > 1152) ||
+		checkIntersection(playerCollider, collider) )
+	{
+		xPosition -= xVelocity;
+		playerCollider.xPosition = xPosition;
+	}
 
-	//if ((yPosition < 0) ||
-	//	(yPosition + playerRect.h > Engine::SCREEN_HEIGHT) ||
-	//	checkCollision(playerCollider, collider))
-	//{
-	//	yPosition -= xVelocity;
-	//	playerCollider.y = yPosition;
-	//}
+	yPosition += yVelocity;
+	collider.yPosition = yPosition;
+
+	if ((yPosition < 0) ||
+		(yPosition + playerRect.h > 648) ||
+		checkIntersection(playerCollider, collider))
+	{
+		yPosition -= xVelocity;
+		playerCollider.yPosition = yPosition;
+	}
 }
