@@ -7,25 +7,30 @@ class Player
 public:
 
 	SDL_Rect playerRect = { 500, 250, 50, 50 };
-	static const int maxVelocity = 10;
+	static const int maxVelocity = 100;
+	bool hasInput = false;
 
 	Player()
 	{
-		playerCollider = playerCollider.initializeAABB(500, 250, 50, 50);
+		/*playerCollider = playerCollider.initializeAABB(500, 250, 50, 50);
 		xVelocity = 0;
 		yVelocity = 0;
-		xPosition = 0;
-		yPosition = 0;
+		xPosition = 500;
+		yPosition = 250;*/
 	};
 
-	void move(AABB& collider);
+	void move();
+	void input();
+	void render();
 
 private:
 
-	int xVelocity, yVelocity;
-	int xPosition, yPosition;
+	float xVelocity = 0;
+	float yVelocity = 0;
+	float xPosition = 500;
+	float yPosition = 250;
+
+	
 
 	AABB playerCollider;
-
-
 };

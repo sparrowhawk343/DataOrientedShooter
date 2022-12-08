@@ -1,5 +1,8 @@
 #include "Engine.h"
 
+SDL_Renderer* renderer = NULL;
+float deltaTime = 0;
+
 	bool Engine::init()
 	{
 		bool success = true;
@@ -46,41 +49,6 @@
 
 		return success;
 	}
-
-	void Engine::input()
-	{
-		SDL_Event inputEvent;
-
-		const Uint8* keystates = SDL_GetKeyboardState(NULL);
-		while (SDL_PollEvent(&inputEvent))
-		{
-			if (inputEvent.type == SDL_QUIT)
-			{
-				quit = true;
-			}
-
-			if (keystates[SDL_SCANCODE_W])
-			{
-				std::cout << "Up" << std::endl;
-			}
-
-			if (keystates[SDL_SCANCODE_S])
-			{
-				std::cout << "Down" << std::endl;
-			}
-
-			if (keystates[SDL_SCANCODE_A])
-			{
-				std::cout << "Left" << std::endl;
-			}
-
-			if (keystates[SDL_SCANCODE_D])
-			{
-				std::cout << "Right" << std::endl;
-			}
-		}
-	}
-
 
 	bool Engine::loadMedia()
 	{
@@ -137,39 +105,15 @@
 		return newTexture;
 	}
 
-	void Engine::update()
-	{
-		SDL_Event e;
-		quit = false;
 
-
-		while (!quit)
-		{
-			while (SDL_PollEvent(&e))
-			{
-				if (e.type == SDL_QUIT)
-				{
-					quit = true;
-				}
-
-				if (e.type == SDL_KEYDOWN)
-				{
-					input();
-				}
-			}
-
-
-			render();
-		}
-	}
 
 	void Engine::render()
 	{
 		SDL_RenderClear(renderer);
 		SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);
 
-		SDL_SetRenderDrawColor(renderer, 0x00, 0xFF, 0x00, 0xFF);
-		SDL_RenderDrawRect(renderer, &outlineRect);
+		//SDL_SetRenderDrawColor(renderer, 0x00, 0xFF, 0x00, 0xFF);
+		//SDL_RenderDrawRect(renderer, &outlineRect);
 
-		SDL_RenderPresent(renderer);
+		//SDL_RenderPresent(renderer);
 	}
