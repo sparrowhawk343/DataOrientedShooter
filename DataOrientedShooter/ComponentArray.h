@@ -2,6 +2,7 @@
 #include "ECS.h"
 #include <array>
 #include <unordered_map>
+#include <cassert>
 
 class IComponentArray
 {
@@ -51,7 +52,7 @@ public:
 		assert(entityToIndexMap.find(entity) != entityToIndexMap.end()
 			&& "Trying to retrieve non-existent component.");
 
-		return compontentArray[entityToIndexMap[entity]];
+		return componentArray[entityToIndexMap[entity]];
 	}
 
 	void entityDestroyed(Entity entity) override

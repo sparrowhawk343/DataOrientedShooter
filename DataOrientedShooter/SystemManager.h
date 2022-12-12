@@ -8,18 +8,16 @@ class SystemManager
 {
 public:
 	template<typename T>
-	
 	std::shared_ptr<T> registerSystem()
 	{
-		const char* typeName ) typeid(T).name();
+		const char* typeName = typeid(T).name();
 
 		assert(systems.find(typeName) == systems.end()
 			&& "Trying to register system more than once.");
 
-		auto system = std::make_shared<T>;
+		auto system = std::make_shared<T>();
 		systems.insert({ typeName, system });
 		return system;
-
 	}
 
 	template<typename T>

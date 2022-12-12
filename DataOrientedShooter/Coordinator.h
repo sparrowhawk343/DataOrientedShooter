@@ -39,10 +39,10 @@ public:
 		componentManager->addComponent<T>(entity, component);
 
 		auto signature = entityManager->getSignature(entity);
-		signature.set(componentManager->getComponentType<T>(), true));
+		signature.set(componentManager->getComponentType<T>(), true);
 		entityManager->setSignature(entity, signature);
 
-		systemManager->entitySignatureChanged(entity, signature),
+		systemManager->entitySignatureChanged(entity, signature);
 	}
 
 	template<typename T>

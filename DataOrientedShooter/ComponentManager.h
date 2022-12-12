@@ -32,13 +32,13 @@ public:
 	template<typename T>
 	void addComponent(Entity entity, T component)
 	{
-		GetComponentArray<T>()->insertData(entity, component);
+		getComponentArray<T>()->insertData(entity, component);
 	}
 
 	template<typename T>
 	void removeComponent(Entity entity)
 	{
-		getComponentArray<T>() - removeData(entity);
+		getComponentArray<T>()->removeData(entity);
 	}
 
 	template<typename T>
@@ -68,7 +68,7 @@ private:
 
 	// convenience function to get the statically casted pointer to the ComponentArray of type T.
 	template<typename T>
-	std::shared_ptr<ComponentArray<T>> GetComponentArray()
+	std::shared_ptr<ComponentArray<T>> getComponentArray()
 	{
 		const char* typeName = typeid(T).name();
 
