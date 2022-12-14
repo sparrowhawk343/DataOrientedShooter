@@ -10,14 +10,14 @@ public:
 	static const int maxVelocity = 100;
 	bool hasInput = false;
 
-	Player()
-	{
-		/*playerCollider = playerCollider.initializeAABB(500, 250, 50, 50);
-		xVelocity = 0;
-		yVelocity = 0;
-		xPosition = 500;
-		yPosition = 250;*/
-	};
+	//Player()
+	//{
+	//	/*playerCollider = playerCollider.initializeAABB(500, 250, 50, 50);
+	//	xVelocity = 0;
+	//	yVelocity = 0;
+	//	xPosition = 500;
+	//	yPosition = 250;*/
+	//};
 
 	void move();
 	void input();

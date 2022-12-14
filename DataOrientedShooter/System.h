@@ -6,4 +6,9 @@ class System
 {
 public:
 	std::set<Entity> entities;
+
+	System* get()
+	{
+		return this;
+	}
 };

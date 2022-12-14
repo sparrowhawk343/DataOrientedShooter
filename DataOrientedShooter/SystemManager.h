@@ -2,6 +2,7 @@
 #include "ECS.h"
 #include <mutex>
 #include <unordered_map>
+#include <initializer_list>
 #include "System.h"
 
 class SystemManager
@@ -17,6 +18,7 @@ public:
 
 		auto system = std::make_shared<T>();
 		systems.insert({ typeName, system });
+		//systems[typeName] = system;
 		return system;
 	}
 

@@ -2,7 +2,7 @@
 
 struct Vec3
 {
-	Vec3();
+	Vec3() {};
 	Vec3(float x, float y, float z)
 	{
 		x = this->x;
@@ -20,6 +20,7 @@ struct Vec3
 
 struct Transform
 {
+	Transform() {};
 	Transform(Vec3 p, Vec3 r, Vec3 s)
 	{
 		position = p;
@@ -34,6 +35,7 @@ struct Transform
 
 struct Gravity
 {
+	Gravity() {};
 	Gravity(Vec3 f)
 	{
 		force = f;
@@ -44,6 +46,7 @@ struct Gravity
 
 struct RigidBody
 {
+	RigidBody() {};
 	RigidBody(Vec3 v, Vec3 a)
 	{
 		velocity = v;

@@ -1,5 +1,6 @@
 #include <vector>
 #include <random>
+#include <memory>
 #include "Engine.h"
 #include "Game.h"
 #include "ECS.h"

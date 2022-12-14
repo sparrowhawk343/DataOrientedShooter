@@ -1,10 +1,11 @@
+#pragma once
 #include "ECS.h"
 #include "Coordinator.h"
 #include "Component.h"
 
 extern Coordinator coordinator;
 
-class PhysicsSystem : System
+class PhysicsSystem : public System
 {
 public:
 	void update(float deltaTime)

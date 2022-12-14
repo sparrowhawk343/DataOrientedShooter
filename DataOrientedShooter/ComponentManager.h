@@ -15,6 +15,8 @@ public:
 		assert(componentTypes.find(typeName) == componentTypes.end()
 			&& "Trying to register component type more than once.");
 
+		auto array = std::make_shared<ComponentArray<T>>();
+		componentArrays.insert({typeName, array });
 		componentTypes.insert({ typeName, nextComponentType });
 	}
 
@@ -74,7 +76,11 @@ private:
 
 		assert(componentTypes.find(typeName) != componentTypes.end() && "Component not registered before use.");
 
-		return std::static_pointer_cast<ComponentArray<T>>(componentArrays[typeName]);
+		auto arrayPointer = std::dynamic_pointer_cast<ComponentArray<T>>(componentArrays[typeName]);
+
+		assert(arrayPointer != nullptr && "ComponentArray cast failed, array is null.");
+
+		return arrayPointer;
 	}
 
 };
