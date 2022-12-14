@@ -21,7 +21,7 @@ public:
 	bool loadMedia();
 	SDL_Texture* loadTexture(std::string path);
 
-	void render();
+	void renderBackground();
 
 	static const int SCREEN_WIDTH = 1152;
 	static const int SCREEN_HEIGHT = 648;

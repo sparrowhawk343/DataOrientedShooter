@@ -107,7 +107,7 @@ float deltaTime = 0;
 
 
 
-	void Engine::render()
+	void Engine::renderBackground()
 	{
 		SDL_RenderClear(renderer);
 		SDL_RenderCopy(renderer, backgroundTexture, NULL, NULL);

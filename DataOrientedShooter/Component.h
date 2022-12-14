@@ -18,6 +18,22 @@ struct Vec3
 	Vec3 operator+=(const Vec3& v)const;
 };
 
+struct Vec2
+{
+	Vec2() {};
+	Vec2(float x, float y)
+	{
+		x = this->x;
+		y = this->y;
+	}
+
+	float x = 0.0f;
+	float y = 0.0f;
+
+	Vec2 operator*(const float& s)const;
+	Vec2 operator+=(const Vec2& v)const;
+};
+
 struct Transform
 {
 	Transform() {};
@@ -54,4 +70,16 @@ struct RigidBody
 	}
 	Vec3 velocity;
 	Vec3 acceleration;
+};
+
+struct Renderable
+{
+	Renderable() {};
+
+	Renderable(Vec3 c)
+	{
+		color = c;
+	}
+
+	Vec3 color;
 };

@@ -19,3 +19,21 @@ Vec3 Vec3::operator+=(const Vec3& v)const
 
 	return vectorToReturn;
 }
+
+Vec2 Vec2::operator*(const float& s)const
+{
+	Vec2 vectorToReturn;
+	vectorToReturn.x = x * s;
+	vectorToReturn.y = y * s;
+
+	return vectorToReturn;
+}
+
+Vec2 Vec2::operator+=(const Vec2& v)const
+{
+	Vec2 vectorToReturn;
+	vectorToReturn.x = x + v.x;
+	vectorToReturn.y = y + v.y;
+
+	return vectorToReturn;
+}

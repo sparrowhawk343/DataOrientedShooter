@@ -1,2 +1,10 @@
-﻿  main.cpp
+﻿  Component.cpp
+  Engine.cpp
+  Player.cpp
+C:\Users\Victor\source\repos\DataOrientedShooter\DataOrientedShooter\Player.cpp(11,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Victor\source\repos\DataOrientedShooter\DataOrientedShooter\Player.cpp(17,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Victor\source\repos\DataOrientedShooter\DataOrientedShooter\Player.cpp(22,18): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\Users\Victor\source\repos\DataOrientedShooter\DataOrientedShooter\Player.cpp(28,19): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
   DataOrientedShooter.vcxproj -> C:\Users\Victor\source\repos\DataOrientedShooter\x64\Debug\DataOrientedShooter.exe

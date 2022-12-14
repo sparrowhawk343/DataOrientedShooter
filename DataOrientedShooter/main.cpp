@@ -52,7 +52,7 @@ void update()
 
 		physicsSystem->update(deltaTime);
 		player.move();
-		engine.render();
+		engine.renderBackground();
 		player.render();
 		SDL_RenderPresent(renderer);
 	}
@@ -67,6 +67,7 @@ int main(int argc, char* args[])
 	coordinator.registerComponent<Gravity>();
 	coordinator.registerComponent<RigidBody>();
 	coordinator.registerComponent<Transform>();
+	coordinator.registerComponent<Renderable>();
 
 	physicsSystem = coordinator.registerSystem<PhysicsSystem>();
 
@@ -74,6 +75,7 @@ int main(int argc, char* args[])
 	signature.set(coordinator.getComponentType<Gravity>());
 	signature.set(coordinator.getComponentType<RigidBody>());
 	signature.set(coordinator.getComponentType<Transform>());
+	signature.set(coordinator.getComponentType<Renderable>());
 
 	coordinator.setSystemSignature<PhysicsSystem>(signature);
 
@@ -118,6 +120,13 @@ int main(int argc, char* args[])
 				Vec3(randomRotation, randomRotation, randomRotation),
 				// scale
 				Vec3(randomScale, randomScale, randomScale)
+			});
+		coordinator.addComponent(
+			entity,
+			Renderable
+			{
+				// color
+				Vec3(1.0f, 0.f, 0.f)
 			});
 	}
 
